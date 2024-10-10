@@ -168,7 +168,7 @@ body {
 }
 
 /* ------------------------------------------------------------------
-  Reused Style => For Hero
+  Reused Style => For Hero, collection
 ---------------------------------------------------------------------*/
 .section {
   padding-block: var(--section-padding);
@@ -252,6 +252,63 @@ body {
 }
 .has-scrollbar:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
   background-color: hsl(0, 0%, 70%);
+}
+
+.has-before,
+.has-after {
+  position: relative;
+  z-index: 1;
+}
+.has-before::before,
+.has-after::after {
+  content: "";
+  position: absolute;
+}
+.hover\:shine {
+  overflow: hidden;
+}
+.hover\:shine .has-bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: var(--transition-2);
+}
+.hover\:shine:is(:hover, :focus) .has-bg-image {
+  transform: scale(1.15);
+}
+.hover\:shine:before {
+  top: 0;
+  left: -140%;
+  bottom: 0;
+  width: 100%;
+  background-image: var(--gradient);
+  transform: skewX(-25deg);
+  transition: var(--transition-2);
+  z-index: 1;
+}
+.hover\:shine:is(:hover, :focus-within)::before {
+  animation: shine 1s ease forwards;
+}
+@keyframes shine {
+  0% {
+    transform: skewX(-25deg) translateX(0);
+  }
+  100% {
+    transform: skewX(-25deg) translateX(250%);
+  }
+}
+
+[data-section] > * {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: var(--transition-3);
+}
+[data-section].active > * {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* ------------------------------------------------------------------
@@ -344,12 +401,14 @@ Mobile Navbar
   z-index: 6;
   transform: translateX(-100%);
   visibility: hidden;
+  opacity: 0;
   transition: 0.25s var(--cubic-in);
 }
 .mobile-navbar.active {
   visibility: visible;
   transform: translateX(0);
   transition: 0.4s var(--cubic-out);
+  opacity: 1;
 }
 .mobile-navbar .wrapper {
   display: flex;
@@ -449,4 +508,36 @@ Back To Top Button
   opacity: 1;
   visibility: visible;
   transform: translateY(-10px);
+}
+
+/* --------------------------------------
+  Collections
+-----------------------------------------*/
+.collection {
+  padding-block-start: 0;
+}
+
+.collection-list {
+  display: grid;
+  gap: 15px;
+}
+
+.collection-card {
+  background-color: var(--light-gray);
+  min-height: 400px;
+  padding: 40px;
+  padding-block-end: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-card .card-title {
+  margin-block-end: 12px;
+}
+
+.collection-card .card-text {
+  color: var(--black);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  margin-block-end: auto;
 }
