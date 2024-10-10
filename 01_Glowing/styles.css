@@ -580,3 +580,338 @@ Back To Top Button
 /* --------------------------------------
   Shop
 -----------------------------------------*/
+
+.shop .title-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-block-end: 50px;
+}
+.shop .btn-link:is(:hover, :focus) {
+  color: var(--hookers-green);
+}
+.shop-card .card-banner {
+  position: relative;
+  overflow: hidden;
+}
+.shop-card .badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.shop-card .card-actions {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  display: grid;
+  gap: 10px;
+  opacity: 0;
+  transition: var(--transition-2);
+}
+.shop-card .action-btn {
+  background: var(--white);
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: var(--transition-1);
+}
+.shop-card .action-btn:is(:hover, :focus) {
+  background: var(--black);
+  color: var(--white);
+}
+.shop-card:is(:hover, :focus-within) .card-actions {
+  opacity: 1;
+  transform: translate(-20px, -50%);
+}
+.shop-card .card-content {
+  padding-block: 20px;
+  text-align: center;
+  align-items: center;
+  gap: 5px;
+}
+.shop-card :is(.price, .card-rating, .rating-wrapper) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.shop-card del {
+  font-size: var(--fs-9);
+  font-weight: var(--fw-400);
+}
+.shop-card .price .span {
+  color: var(--black);
+  font-weight: var(--fw-700);
+}
+.shop-card .card-title {
+  color: var(--black);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  margin-block-end: 8px;
+  transition: var(--transition-1);
+}
+.shop-card .card-title:is(:hover, :focus) {
+  text-decoration: underline;
+  color: var(--hookers-green);
+}
+.shop-card .rating-wrapper {
+  gap: 2px;
+  color: var(--hookers-green);
+  font-size: 15px;
+}
+.shop-card .rating-text {
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  line-height: 1;
+}
+
+/* --------------------------------------
+  Media Queries
+-----------------------------------------*/
+/* responsive for larger than 575px screen */
+@media (min-width: 575px) {
+  /* Reused Style */
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  :is(.header, .hero) .container {
+    max-width: unset;
+  }
+  .has-scrollbar {
+    gap: 30px;
+  }
+  .scrollbar-item {
+    min-width: calc(50% - 15px);
+  }
+
+  /* Header */
+  .alert {
+    padding-block: 8px;
+  }
+  .header-top .container {
+    padding-inline: 30px;
+  }
+
+  /* Head */
+  .hero-card {
+    padding-inline: 70px;
+  }
+  .hero-text {
+    max-width: 15rem;
+  }
+
+  /* Banner */
+  /* Offer */
+}
+
+/* Responsive for larger than 768px screen */
+@media (min-width: 768px) {
+  /* Custom Property */
+  /* Typography */
+  :root {
+    --fs-1: 5.6rem;
+  }
+  /* Reused Style */
+  .container {
+    max-width: 730px;
+  }
+  .flex-item {
+    max-width: calc(50% - 15px);
+  }
+
+  /* Collection */
+  .collection-card {
+    min-height: 450px;
+  }
+
+  /* Banner */
+  /* Offer */
+  /* footer */
+}
+
+@media (min-width: 922px) {
+  :root {
+    --section-padding: 50px;
+  }
+  /* Reused */
+  .container {
+    max-width: 960px;
+  }
+  .scrollbar-item {
+    min-width: calc(33.33% - 20px);
+  }
+  .flex-item {
+    max-width: calc(33.33% - 20px);
+  }
+
+  .collection-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  /* Banner */
+  .banner-list {
+    grid-template-columns: 1fr 0.5fr;
+  }
+
+  /* Offer */
+  /* Footer */
+}
+
+/* Responsive For Larger Than 1200px Screen */
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+  .scrollbar-item {
+    min-width: calc(20% - 24px);
+  }
+
+  /* Header */
+  .header .input-wrapper,
+  .header-action-btn:not(:first-child),
+  .navbar {
+    display: block;
+  }
+  .nav-open-btn {
+    display: none;
+  }
+  .header {
+    padding-block-end: 60px;
+    margin-block-end: 10px;
+  }
+  .header-top {
+    position: unset;
+    padding-block: 24px 0;
+  }
+  .header-top:is(.active, .header-hide) {
+    all: unset;
+  }
+  .header-top .container {
+    flex-wrap: wrap;
+  }
+  .search-field {
+    width: 270px;
+    font-size: var(--fs-7);
+    border: 2px solid var(--hookers-green_20);
+    border-radius: var(--radius-3);
+    padding: 10px 20px;
+    padding-inline-end: 40px;
+    outline: none;
+    transition: var(--transition-1);
+  }
+  .search-field::placeholder {
+    color: var(--spanish-gray);
+  }
+  .search-field:focus {
+    border-color: var(--black);
+  }
+  .header .input-wrapper {
+    position: relative;
+  }
+  .header .search-submit {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 22px;
+  }
+  .header .search-submit ion-icon {
+    --ionicon-stroke-width: 40px;
+  }
+  .header .logo {
+    margin-inline-end: 60px;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .header-action-btn {
+    position: relative;
+  }
+  .header-action-btn .btn-badge {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: var(--fs-9);
+    min-width: 18px;
+    height: 18px;
+    line-height: 1.4;
+    border-radius: 20px;
+  }
+  .header-action-btn:last-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-action-btn .btn-text {
+    font-size: var(--fs-7);
+    font-weight: var(--fw-700);
+    margin-block-start: 3px;
+  }
+  .navbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding-block: 18px;
+    z-index: 4;
+  }
+  .navbar .navbar-list {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+  }
+  .navbar .navbar-link {
+    color: var(--black);
+    font-size: var(--fs-7);
+    font-weight: var(--fw-600);
+  }
+  .navbar .navbar-link::after {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--black);
+    transition: var(--transition-1);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .navbar .navbar-link:is(:hover, :focus)::after {
+    transform: scale(1);
+  }
+  .header-top.active .navbar {
+    position: fixed;
+    top: -80px;
+    bottom: auto;
+    padding-block: 28px;
+    box-shadow: var(--shadow-1);
+    transform: translateY(100%);
+    transition: var(--transition-2);
+  }
+
+  .header-top.header-hide .navbar {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  /**
+   * HERO
+   */
+
+  .hero-card {
+    padding: 120px 100px;
+  }
+
+  .hero-text {
+    max-width: 40ch;
+  }
+}
