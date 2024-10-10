@@ -167,12 +167,96 @@ body {
   background-color: hsl(0, 0%, 70%);
 }
 
-/* Reused Style */
+/* ------------------------------------------------------------------
+  Reused Style => For Hero
+---------------------------------------------------------------------*/
+.section {
+  padding-block: var(--section-padding);
+}
 .container {
   padding-inline: 15px;
 }
+.has-bg-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-/* Header */
+.h1,
+.h2,
+.h3,
+.h2-large {
+  color: var(--black);
+  font-weight: var(--fw-600);
+  line-height: 1.3;
+}
+
+.h1 {
+  font-size: var(--fs-1);
+  line-height: 1.2;
+}
+
+.h2 {
+  font-size: var(--fs-3);
+}
+
+.h2-large {
+  font-size: var(--fs-2);
+}
+
+.h3 {
+  font-size: var(--fs-4);
+}
+
+.btn {
+  font-weight: var(--fw-600);
+  max-width: max-content;
+  padding: 10px 30px;
+  border-radius: var(--radius-3);
+  transition: var(--transition-1);
+}
+
+.btn-primary,
+.btn-secondary:is(:hover, :focus) {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.btn-primary:is(:hover, :focus) {
+  background-color: var(--hookers-green);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: var(--shadow-2);
+}
+
+.has-scrollbar {
+  display: flex;
+  overflow-x: auto;
+  padding-block-end: 15px;
+  margin-block-end: -15px;
+  scroll-snap-type: inline mandatory;
+}
+.scrollbar-item {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+.has-scrollbar::-webkit-scrollbar-track,
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.has-scrollbar:is(:hover, :focus-within)::-webkit-scrollbar-track {
+  background-color: #fafafa;
+}
+.has-scrollbar:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 70%);
+}
+
+/* ------------------------------------------------------------------
+  Header
+---------------------------------------------------------------------*/
 .header .input-wrapper,
 .header-action-btn:not(:first-child),
 .navbar {
@@ -258,8 +342,8 @@ Mobile Navbar
   width: 100%;
   padding: 25px 40px;
   z-index: 6;
-  /* transform: translateX(-100%);
-  visibility: hidden; */
+  transform: translateX(-100%);
+  visibility: hidden;
   transition: 0.25s var(--cubic-in);
 }
 .mobile-navbar.active {
@@ -308,29 +392,61 @@ Mobile Navbar
   pointer-events: all;
 }
 
-
 /* --------------------------------------------------------
-HERO
+ HERO
 -----------------------------------------------------------
 */
-.hero{
-    padding-block-start: 0;
+
+.hero {
+  padding-block-start: 0;
 }
-.hero-card{
-    background-color: var(--light-gray);
-    padding: 100px 15px;
-    background-position: 40%;
+
+.hero-card {
+  background-color: var(--light-gray);
+  padding: 100px 15px;
+  background-position: 40%;
 }
-.hero-text{
-    font-size: var(--fs-6);
-    margin-bottom: 16px 30px;
+
+.hero-text {
+  font-size: var(--fs-6);
+  margin-block: 16px 30px;
 }
-.hero .price{
-    color: var(--black);
-    font-size: var(--fs-5);
-    font-weight: var(--fw-600);
-    margin-block-end: 20px;
+
+.hero .price {
+  color: var(--black);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  margin-block-end: 20px;
 }
-.hero .scrollbar-item{
-    min-width: 100%;
+
+.hero .scrollbar-item {
+  min-width: 100%;
+}
+
+/* --------------------------------------
+Back To Top Button
+-----------------------------------------*/
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background: var(--white);
+  color: var(--hookers-green);
+  font-size: 22px;
+  padding: 13px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-1);
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-1);
+}
+.back-to-top:is(:hover, :focus) {
+  background: var(--hookers-green);
+  color: var(--white);
+}
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-10px);
 }
