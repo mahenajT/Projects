@@ -700,6 +700,26 @@ Back To Top Button
 }
 
 /* --------------------------------------
+  Feature
+-----------------------------------------*/
+.feature {
+  text-align: center;
+}
+.feature .section-title {
+  margin-block-end: 40px;
+}
+.feature-card .card-icon {
+  width: 100px;
+  margin-inline: auto;
+}
+.feature-card .card-title {
+  margin-block: 35px 15px;
+}
+.feature-card .card-text {
+  font-size: var(--fs-7);
+}
+
+/* --------------------------------------
   Media Queries
 -----------------------------------------*/
 /* responsive for larger than 575px screen */
@@ -969,4 +989,16 @@ Back To Top Button
   /**
    * OFFER
    */
+
+  /* Feature */
+  .feature .section-title {
+    margin-block-end: 60px;
+  }
+  .feature .flex-list {
+    gap: 100px;
+    padding-inline: 50px;
+  }
+  .feature .flex-item {
+    max-width: calc(33.33% - 66.66px);
+  }
 }
