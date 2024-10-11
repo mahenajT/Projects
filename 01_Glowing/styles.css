@@ -718,7 +718,33 @@ Back To Top Button
 .feature-card .card-text {
   font-size: var(--fs-7);
 }
-
+/* --------------------------------------
+  Offer
+-----------------------------------------*/
+/* --------------------------------------
+  Blog
+-----------------------------------------*/
+/* --------------------------------------
+  Footer
+-----------------------------------------*/
+.footer .logo {
+  display: none;
+}
+.footer {
+  background: var(--cultured-1);
+  padding-block: 70px;
+}
+.footer-top {
+  display: grid;
+  gap: 40px;
+  margin-block-end: 60px;
+}
+.footer-list-title {
+  color: var(--black);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  margin-block-end: 10px;
+}
 /* --------------------------------------
   Media Queries
 -----------------------------------------*/
