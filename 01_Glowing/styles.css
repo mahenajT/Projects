@@ -669,6 +669,37 @@ Back To Top Button
 }
 
 /* --------------------------------------
+  Banner
+-----------------------------------------*/
+
+.banner-list {
+  display: grid;
+  gap: 30px;
+}
+.banner-card {
+  min-height: 420px;
+  padding: 30px;
+}
+.banner-card .card-subtitle {
+  color: var(--black);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.banner-card :is(.card-subtitle, .card-title) {
+  text-shadow: 0 0 2px var(--cultured-2);
+}
+.banner-card-1 .card-title {
+  margin-block: 10px 30px;
+}
+.banner-card .card-text {
+  color: var(--black);
+  font-size: var(--fs-7);
+  margin-block: 10px 25px;
+}
+
+/* --------------------------------------
   Media Queries
 -----------------------------------------*/
 /* responsive for larger than 575px screen */
@@ -706,6 +737,10 @@ Back To Top Button
   }
 
   /* Banner */
+  .banner-card .card-text {
+    max-width: 30ch;
+  }
+
   /* Offer */
 }
 
@@ -730,7 +765,15 @@ Back To Top Button
   }
 
   /* Banner */
+  .banner-list {
+    grid-template-columns: 1fr 0.7fr;
+  }
+
+  .banner-card {
+    padding: 50px;
+  }
   /* Offer */
+
   /* footer */
 }
 
@@ -914,4 +957,16 @@ Back To Top Button
   .hero-text {
     max-width: 40ch;
   }
+
+  /**
+   * BANNER
+   */
+
+  .banner-card-1 .card-title {
+    max-width: 15ch;
+  }
+
+  /**
+   * OFFER
+   */
 }
