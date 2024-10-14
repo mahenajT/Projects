@@ -14,19 +14,22 @@
     <div class="container">
       <div class="left-column">
         <label> <ion-icon class="logo" name="logo-html5"></ion-icon>HTML</label>
-        <textarea id="html-code"></textarea>
+        <textarea id="html-code" onkeyup="run()"> </textarea>
         <label> <ion-icon class="logo" name="logo-css3"></ion-icon>CSS</label>
-        <textarea id="css-code"></textarea>
+        <textarea id="css-code" onkeyup="run()"></textarea>
         <label>
           <ion-icon class="logo" name="logo-javascript"></ion-icon
           >JavaScript</label
         >
-        <textarea id="js-code"></textarea>
+        <textarea id="js-code" onkeyup="run()"></textarea>
       </div>
       <div class="right-column">
         <label><ion-icon class="logo" name="play"></ion-icon>Output</label>
         <iframe id="output"></iframe>
       </div>
     </div>
+
+    <!-- Script -->
+    <script src="app.js"></script>
   </body>
 </html>
