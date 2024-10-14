@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-column">
+        <label> <ion-icon class="logo" name="logo-html5"></ion-icon>HTML</label>
+        <textarea id="html-code"></textarea>
+        <label> <ion-icon class="logo" name="logo-css3"></ion-icon>CSS</label>
+        <textarea id="css-code"></textarea>
+        <label>
+          <ion-icon class="logo" name="logo-javascript"></ion-icon
+          >JavaScript</label
+        >
+        <textarea id="js-code"></textarea>
+      </div>
+      <div class="right-column">
+        <label><ion-icon class="logo" name="play"></ion-icon>Output</label>
+        <iframe id="output"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
